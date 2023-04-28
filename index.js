@@ -10,14 +10,11 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
 
-app.use(express.static(path.join(__dirname + "/public")))
-
-
 
 //DB config
 mongoose.connect('mongodb+srv://patilgundu161:gunds161@cluster0.9y22rl7.mongodb.net/reminderAppDB', {
     useNewUrlParser: true, 
-    useUnifiedTopology: true
+    useUnifiedTopology: true 
 }, () => console.log("DB connected"))
 const reminderSchema = new mongoose.Schema({
     reminderMsg: String,
@@ -109,7 +106,5 @@ app.post("/deleteReminder", (req, res) => {
         })
     })
 }) 
-
-
 
 app.listen(process.env.PORT || 9000, () => console.log("Be started"))
