@@ -12,8 +12,10 @@ app.use(cors())
 
 app.use(express.static(path.join(__dirname + "/public")))
 
+
+
 //DB config
-mongoose.connect('mongodb://localhost:27017/reminderAppDB', {
+mongoose.connect('mongodb+srv://patilgundu161:gunds161@cluster0.9y22rl7.mongodb.net/reminderAppDB', {
     useNewUrlParser: true, 
     useUnifiedTopology: true
 }, () => console.log("DB connected"))
